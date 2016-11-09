@@ -1,63 +1,40 @@
-body {
-  font-family: arial;
-}
+<!DOCTYPE html>
+<html>
 
-table {
-  border: 1px solid #ccc;
-  width: 100%;
-  margin:0;
-  padding:0;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Responsive Table CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-table tr {
-  border: 1px solid #ddd;
-  padding: 5px;
-}
+<body>
+  <h1 tabindex="0">Responsive Table with pure CSS</h1>
 
-table th, table td {
-  padding: 10px;
-  text-align: center;
-}
+  <table tabindex="0">
+      <tr class="wide-table-header-row">
+        <th id="Reason for Payment">Reason for Payment</th>
+        <th id="Payment Type">Payment Type</th>
+        <th id="Tax Year">Tax Year</th>
+        <th id="Amount Owed">Amount Owed</th>
+      </tr>
+      <tbody class="wide-table-row">
+        <tr class="wide-table-cell"><th class="mobile-only">Reason for Payment</th><td>Shared Responsibility Payment (select Installment Agreement)</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Payment Type</th><td>Health Care (Form 1040)</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Tax Year</th><td>2014</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Amount Owed</th><td>$644.57</td></tr>
+      </tbody>
+      <tbody class="wide-table-row" class="mobile-only-table">
+        <tr class="wide-table-cell"><th class="mobile-only">Reason for Payment</th><td>Tax Return or Notice</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Payment Type</th><td>1040</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Tax Year</th><td>2013</td></tr>
+        <tr class="wide-table-cell"><th class="mobile-only">Amount Owed</th><td>$205.25</td></tr>
+      </tbody>
+  </table>
 
-table th {
-  font-size: 14px;
-}
+</body>
+<footer>
+  This is the footer
+</footer>
 
-table {
-  border: 1px solid #ccc;
-  width: 100%;
-  margin:0;
-  padding:0;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* Beginning of Responsive Accessible Table CSS logic */
-.wide-table-header-row {
-  display: none;
-}
-
-@media screen and (min-width: 40em) {
-
-  table .wide-table-header-row {
-    display: table-row;
-  }
-
-  table .wide-table-row {
-    display: table-row;
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .wide-table-cell {
-    display: table-cell;
-  }
-
-  .wide-table-cell > td {
-    display: inline;
-  }
-}
+</html>
