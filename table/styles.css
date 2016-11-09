@@ -59,10 +59,10 @@ table th {
 @media screen and (max-width: 600px) {
 
   table.wide-table {
-    display: block;
+    display: table;
   }
 
   tr.mobile-only-table {
-    display: table;
+    display: table-row-group;
   }
 }
