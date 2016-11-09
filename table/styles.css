@@ -25,21 +25,27 @@ table th {
   font-size: 14px;
 }
 
+table {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin:0;
+  padding:0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Beginning of Responsive Accessible Table CSS logic */
 .wide-table-header-row {
   display: none;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 40em) {
 
-  .wide-table-header-row {
+  table .wide-table-header-row {
     display: table-row;
   }
 
-  div.wide-table {
-    display: table;
-  }
-
-  .wide-table .mobile-only-table {
+  table .wide-table-row {
     display: table-row;
   }
 
@@ -53,16 +59,5 @@ table th {
 
   .wide-table-cell > td {
     display: inline;
-  }
-}
-
-@media screen and (max-width: 600px) {
-
-  table.wide-table {
-    display: table;
-  }
-
-  tr.mobile-only-table {
-    display: table-row-group;
   }
 }
