@@ -8,6 +8,25 @@ th.mobile-only {
 }
 */
 
+.mobile-only {
+  display: table-row;
+}
+
+.wide-table-cell td {
+  display: table-row;
+}
+
+.wide-table-row {
+  display: table;
+  width: 100%;
+  /*border-collapse: separate;*/
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
+
+.table>tbody+tbody {
+  border-top: 1px solid black;
+}
 /* Mobile view space between pseduo-tables */
 tr.spacer, tr.spacer > td {
   column-span: all;
@@ -20,13 +39,17 @@ tr.spacer, tr.spacer > td {
 }
 
 .table-bordered > tbody > tr.wide-table-cell {
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
 }
 
 /* Beginning of Responsive Accessible Table CSS logic */
 .wide-table-header-row {
   display: none;
 }
+
+.table-bordered {
+    border: none;
+  }
 
 @media screen and (min-width: 40em) {
 
