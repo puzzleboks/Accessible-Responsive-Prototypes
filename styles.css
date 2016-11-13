@@ -51,7 +51,7 @@ tbody.wide-table-row {
 
   /*Mobile view space before and after pseudo-tables*/
   tbody.wide-table-row:before, tbody.wide-table-row:after {
-    content: "-";
+    content: "\00a0";
     display: block;
     line-height: 1;
     color: transparent;
@@ -59,7 +59,7 @@ tbody.wide-table-row {
 
   /*Mobile view cell spacing*/
   .table-bordered > tbody > tr.wide-table-cell:not(:last-child):after {
-    content: "-";
+    content: "\00a0";
     display: block;
     line-height: .8;
     color: transparent;
