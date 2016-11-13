@@ -1,4 +1,17 @@
-/*
+.table-caption {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #333333;
+}
+
+.table-bordered {
+  border: none;
+}
+
+.table>tbody+tbody {
+  border-top: 1px solid #ddd;
+}
+
 th.mobile-only {
   display: table-row;
 }
@@ -6,40 +19,27 @@ th.mobile-only {
 .wide-table-cell > td {
   display: table-row;
 }
-*/
 
-.mobile-only {
-  display: table-row;
+/*For indenting the pseudo-tables in mobile view*/
+tbody.wide-table-row {
+  border-collapse: separate;
+  border-spacing: 10px 0px;
 }
 
-.wide-table-cell td {
-  display: table-row;
-}
-
-.wide-table-row {
-  display: table;
-  width: 100%;
-  /*border-collapse: separate;*/
-  margin-bottom: 15px;
-  border: 1px solid black;
-}
-
-.table>tbody+tbody {
-  border-top: 1px solid black;
-}
 /* Mobile view space between pseduo-tables */
-tr.spacer, tr.spacer > td {
+/*tr.spacer, tr.spacer > td {
   column-span: all;
   border-width: 1px solid #fff;
-}
+}*/
 
 /* Adaptor rules for bootstrap */
 .table-bordered > tbody > tr.wide-table-cell > td, .table-bordered > tbody > tr.wide-table-cell > th {
-  border-width: 0em;
+  border: 0em;
+  line-height: 1.3;
 }
 
-.table-bordered > tbody > tr.wide-table-cell {
-  /*border: 1px solid #ddd;*/
+.table-bordered > tbody > tr.wide-table-header-row > th {
+  border: 0em;
 }
 
 /* Beginning of Responsive Accessible Table CSS logic */
@@ -47,9 +47,24 @@ tr.spacer, tr.spacer > td {
   display: none;
 }
 
-.table-bordered {
-    border: none;
+@media screen and (max-width: 40em) {
+
+  /*Mobile view space before and after pseudo-tables*/
+  tbody.wide-table-row:before, tbody.wide-table-row:after {
+    content: "-";
+    display: block;
+    line-height: 1;
+    color: transparent;
   }
+
+  /*Mobile view cell spacing*/
+  .table-bordered > tbody > tr.wide-table-cell:not(:last-child):after {
+    content: "-";
+    display: block;
+    line-height: .8;
+    color: transparent;
+  }
+}
 
 @media screen and (min-width: 40em) {
 
@@ -71,5 +86,9 @@ tr.spacer, tr.spacer > td {
 
   .wide-table-cell > td {
     display: inline;
+  }
+
+  .table>tbody+tbody {
+    border-top: none;
   }
 }
